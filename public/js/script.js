@@ -1,106 +1,76 @@
-// Custom JavaScript for Demo App
+// WebSolutions - Interactive Functionality
 
-// Wait for DOM to be fully loaded
-document.addEventListener('DOMContentLoaded', function () {
-  console.log('🚀 DEPLOYMENT RACE TEST - v2025.08.27.16.50');
-  console.log('⚡ Vercel vs Render.com Speed Comparison');
-  console.log('📅 Deploy timestamp: Aug 27, 2025 - 4:50 PM UTC');
-
-  // Add fade-in animation to cards
-  const cards = document.querySelectorAll('.card');
-  cards.forEach((card, index) => {
-    setTimeout(() => {
-      card.classList.add('fade-in');
-    }, index * 200);
-  });
-});
-
-// Show alert function
-function showAlert() {
-  const alerts = [
-    '🚀 Render.com deployment test successful!',
-    '☁️ Auto-deployment from Git is working perfectly!',
-    '✨ Render.com makes deployment so easy!',
-    '🌟 Great! Your app is live on Render!',
-    '🎯 Perfect! Deployment workflow validated!'
-  ];
-
-  const randomAlert = alerts[Math.floor(Math.random() * alerts.length)];
-
-  // Create a Bootstrap alert
-  const alertDiv = document.createElement('div');
-  alertDiv.className = 'alert alert-success alert-dismissible fade show position-fixed';
-  alertDiv.style.cssText = 'top: 20px; right: 20px; z-index: 9999; min-width: 300px;';
-  alertDiv.innerHTML = `
-        ${randomAlert}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    `;
-
-  document.body.appendChild(alertDiv);
-
-  // Auto-remove after 3 seconds
-  setTimeout(() => {
-    if (alertDiv && alertDiv.parentNode) {
-      alertDiv.remove();
+// Show professional alert messages
+function showAlert(type) {
+    let message = '';
+    let title = '';
+    
+    switch(type) {
+        case 'consultation':
+            title = 'Free Consultation';
+            message = 'Thank you for your interest! We\'ll contact you within 24 hours to schedule your free consultation.';
+            break;
+        case 'contact':
+            title = 'Contact Information';
+            message = 'Email: hello@websolutions.com\nPhone: (555) 123-4567\nWe\'ll get back to you within 24 hours!';
+            break;
+        default:
+            title = 'WebSolutions';
+            message = 'Thank you for visiting our website!';
     }
-  }, 3000);
+    
+    alert(`${title}\n\n${message}`);
 }
 
-// Smooth scroll to about section
-function scrollToAbout() {
-  const aboutSection = document.getElementById('about');
-  aboutSection.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start'
-  });
-}
-
-// Add some interactive features
-document.addEventListener('DOMContentLoaded', function () {
-  // Add click animation to badges
-  const badges = document.querySelectorAll('.badge');
-  badges.forEach(badge => {
-    badge.addEventListener('click', function () {
-      this.style.transform = 'scale(0.95)';
-      setTimeout(() => {
-        this.style.transform = 'scale(1.1)';
-      }, 100);
-      setTimeout(() => {
-        this.style.transform = 'scale(1)';
-      }, 200);
-    });
-  });
-
-  // Add hover effect to navigation links
-  const navLinks = document.querySelectorAll('.nav-link');
-  navLinks.forEach(link => {
-    link.addEventListener('click', function (e) {
-      if (this.getAttribute('href').startsWith('#')) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
+// Smooth scroll to section
+function scrollToSection(sectionId) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+        element.scrollIntoView({
             behavior: 'smooth',
             block: 'start'
-          });
-        }
-      }
-    });
-  });
-});
-
-// Add a simple visitor counter (stored in localStorage)
-function updateVisitorCounter() {
-  let visits = localStorage.getItem('demoAppVisits') || 0;
-  visits = parseInt(visits) + 1;
-  localStorage.setItem('demoAppVisits', visits);
-
-  console.log(`� Render.com deployment test - Visit #${visits}`);
-
-  // You could display this counter on the page if desired
-  return visits;
+        });
+    }
 }
 
-// Initialize visitor counter
-updateVisitorCounter();
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Add smooth scrolling to all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Add loading animation effect
+    const serviceCards = document.querySelectorAll('.service-card');
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    serviceCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+    
+    console.log('WebSolutions site loaded successfully!');
+});

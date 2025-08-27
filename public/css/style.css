@@ -1,119 +1,135 @@
-/* Custom styles for Demo App */
+/* WebSolutions - Professional Styles */
+
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
 
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 100%);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
 }
 
 .hero-section .container {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 }
 
-/* Feature Icons */
-.feature-icon {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
+/* Service Cards */
+.service-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
 }
 
-/* Card Hover Effects */
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+.service-icon {
+    transition: transform 0.3s ease;
 }
 
-/* Button Animations */
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #667eea !important;
+}
+
+/* Buttons */
 .btn {
-  transition: all 0.3s ease;
+    border-radius: 25px;
+    font-weight: 600;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.btn-primary {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #5a6fd8, #6a4190);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-outline-light:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Sections */
+section {
+    scroll-margin-top: 80px;
+}
+
+.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* Typography */
+h2 {
+    color: #333;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .btn-lg {
+        padding: 10px 25px;
+        font-size: 1rem;
+    }
+    
+    .d-flex.gap-3 {
+        flex-direction: column;
+        gap: 1rem !important;
+    }
 }
 
 /* Smooth Scrolling */
 html {
-  scroll-behavior: smooth;
-}
-
-/* Badge Styling */
-.badge {
-  transition: transform 0.2s ease;
-}
-
-.badge:hover {
-  transform: scale(1.1);
-}
-
-/* Navbar Styling */
-.navbar-brand {
-  font-weight: 600;
-  font-size: 1.5rem;
-}
-
-/* Section Spacing */
-section {
-  scroll-margin-top: 80px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .hero-section {
-    min-height: 80vh;
-    text-align: center;
-  }
-
-  .display-3 {
-    font-size: 2.5rem;
-  }
-
-  .feature-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-}
-
-/* Loading Animation */
-.fade-in {
-  animation: fadeIn 0.8s ease-in;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    scroll-behavior: smooth;
 }
