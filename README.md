@@ -1,6 +1,26 @@
-# Demo App - Node.js + Bootstrap Hello World
+# Demo App - Render.com Deployment Test
 
-A simple, modern Hello World application built with Node.js and Bootstrap 5.
+A Node.js + Bootstrap application for testing deployment workflows on Render.com.
+
+## Purpose
+
+This app is specifically designed to:
+- ✅ Test Render.com's automatic deployment from Git
+- ✅ Validate Node.js/Express hosting capabilities  
+- ✅ Verify static file serving on Render.com
+- ✅ Demonstrate continuous deployment workflow
+
+## Render.com Deployment
+
+### Automatic Deployment
+1. Connect your Git repository to Render.com
+2. Set build command: `npm install`
+3. Set start command: `npm start`
+4. Render will automatically deploy on every push to main branch
+
+### Environment Variables
+- `PORT` - Automatically set by Render.com
+- No additional environment variables needed for this demo
 
 ## Features
 
@@ -52,6 +72,7 @@ demo-app/
 - **Framework**: Bootstrap 5.3.2
 - **Icons**: Font Awesome
 - **Development**: Nodemon for auto-reload
+- **Deployment**: Optimized for Render.com hosting
 
 ## Features Showcase
 

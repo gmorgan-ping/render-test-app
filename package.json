@@ -1,7 +1,7 @@
 {
   "name": "demo-app",
   "version": "1.0.0",
-  "description": "A simple Node.js Hello World app with Bootstrap CSS",
+  "description": "A Node.js app for testing Render.com deployment workflows",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -10,7 +10,8 @@
   "keywords": [
     "nodejs",
     "bootstrap",
-    "hello-world",
+    "render.com",
+    "deployment",
     "demo"
   ],
   "author": "",

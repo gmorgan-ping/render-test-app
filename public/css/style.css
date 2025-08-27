@@ -2,117 +2,118 @@
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 1;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .hero-section .container {
-    position: relative;
-    z-index: 2;
+  position: relative;
+  z-index: 2;
 }
 
 /* Feature Icons */
 .feature-icon {
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 /* Card Hover Effects */
 .card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Button Animations */
 .btn {
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Smooth Scrolling */
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 /* Badge Styling */
 .badge {
-    transition: transform 0.2s ease;
+  transition: transform 0.2s ease;
 }
 
 .badge:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 /* Navbar Styling */
 .navbar-brand {
-    font-weight: 600;
-    font-size: 1.5rem;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 /* Section Spacing */
 section {
-    scroll-margin-top: 80px;
+  scroll-margin-top: 80px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .hero-section {
-        min-height: 80vh;
-        text-align: center;
-    }
-    
-    .display-3 {
-        font-size: 2.5rem;
-    }
-    
-    .feature-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
-    }
+  .hero-section {
+    min-height: 80vh;
+    text-align: center;
+  }
+
+  .display-3 {
+    font-size: 2.5rem;
+  }
+
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
 }
 
 /* Loading Animation */
 .fade-in {
-    animation: fadeIn 0.8s ease-in;
+  animation: fadeIn 0.8s ease-in;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
