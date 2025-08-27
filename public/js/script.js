@@ -2,7 +2,9 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
-  console.log('🚀 Demo App loaded successfully!');
+  console.log('🚀 DEPLOYMENT RACE TEST - v2025.08.27.16.50');
+  console.log('⚡ Vercel vs Render.com Speed Comparison');
+  console.log('📅 Deploy timestamp: Aug 27, 2025 - 4:50 PM UTC');
 
   // Add fade-in animation to cards
   const cards = document.querySelectorAll('.card');
